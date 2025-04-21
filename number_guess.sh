@@ -82,7 +82,7 @@ guessing_game () {
       echo "It's higher than that, guess again:" 
     else
       player_guess_bool=1
-      echo "You guessed it in $current_guesses tries. The secret number was $secret_number. Nice job!"
+      # echo "You guessed it in $current_guesses tries. The secret number was $secret_number. Nice job!"
     fi
   done
 
@@ -99,7 +99,8 @@ else
   echo "$($PSQL "UPDATE player_info SET games_played = games_played + 1 WHERE username = '${player_info_arr[1]}';")" | $hide_update_db_output
 fi
 
-
+# final message
+echo "You guessed it in $current_guesses tries. The secret number was $secret_number. Nice job!"
 }
 
 # program start
