@@ -61,8 +61,8 @@ guessing_game () {
   
   echo -e "\nGuess the secret number between 1 and 1000:"
 
-  # generate secret number here, assign to var secret_number
-  secret_number=10
+  # generate secret number between 1 and 1000 (inclusive)
+  secret_number=$((1 + $RANDOM % 1000))
 
   while [ $player_guess_bool == 0 ]
   do
